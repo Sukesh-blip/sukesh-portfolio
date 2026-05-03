@@ -80,9 +80,9 @@ export class AboutComponent {
     {
       name: 'AZ-900',
       issuer: 'Microsoft',
-      issued: 'Issued 2024',
+      issued: 'Issued 12 January 2026',
       credId: '',
-      link: 'https://learn.microsoft.com/en-us/certifications/azure-fundamentals/',
+      link: 'https://learn.microsoft.com/en-us/users/sukeshbiradar-4793/credentials/certification/azure-fundamentals?tab=credentials-tab',
       badgeUrl: 'https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg',
       flipped: false,
     },
@@ -94,7 +94,7 @@ export class AboutComponent {
       flipped: false,
     },
     {
-      name: 'AI-102 / AI-103',
+      name: 'AI-103',
       issuer: 'Microsoft',
       issued: 'In Progress',
       badgeUrl: 'https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg',
