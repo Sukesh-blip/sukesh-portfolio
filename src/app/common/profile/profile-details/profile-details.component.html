@@ -1,0 +1,77 @@
+<div class="px-4 mx-auto max-w-xs sm:px-6 lg:px-8 pt-6">
+
+  <!-- Profile Photo — centered, white bg sidebar -->
+  <div class="text-center animate-scale-wave delay-1">
+    <img src="assets/profile.jpg" alt="Sukesh Biradar"
+         class="object-cover object-top w-36 h-36 mx-auto rounded-full border-4 border-white shadow-lg">
+    <div class="mt-4 animate-scale-wave delay-2">
+      <p class="text-base font-semibold uppercase tracking-[0.1em] text-gray-800">
+        Sukesh Biradar
+      </p>
+      <p class="text-xs mt-1 tracking-[0.12em] uppercase text-blue-600 font-medium">
+        AI Backend Engineer
+      </p>
+    </div>
+
+    <!-- Email copy button -->
+    <div class="group animate-scale-wave delay-3 mt-3">
+      <button (click)="copyEmail()"
+              class="bg-transparent border-0 cursor-pointer duration-100 flex font-normal h-auto items-center justify-center overflow-hidden p-3 relative transition-all w-full mx-auto max-w-[220px]">
+        <span class="absolute border-l-2 border-y-2 border-sky-400 duration-500 group-hover:w-full h-full left-0 transition-all w-5"></span>
+        <span class="group-hover:opacity-0 pb-1 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all duration-200 text-gray-500"
+              style="font-size: 10px; font-family: 'Space Mono', monospace; letter-spacing: 0.03em;">
+          {{ emailCopied ? '✓ copied!' : 'biradarsukesh4&#64;gmail.com' }}
+        </span>
+        <span class="group-hover:translate-x-0 group-hover:opacity-100 absolute pb-1 translate-x-full opacity-0 transition-all duration-200 text-blue-600 font-semibold text-xs">
+          Click To Copy
+        </span>
+        <span class="absolute border-r-2 border-y-2 border-sky-400 duration-500 group-hover:w-full h-full right-0 transition-all w-5"></span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<hr class="my-4 animate-scale-wave delay-4 border-gray-200">
+
+<div class="text-left animate-scale-wave delay-5 px-4">
+  <h2 class="text-xs font-bold tracking-[0.22em] uppercase text-gray-500 mb-2">ABOUT</h2>
+  <p class="text-sm leading-relaxed text-gray-600">
+    I build secure, scalable backend systems with Java, Spring Boot, and Azure — from designing REST APIs and JWT auth to containerizing with Docker and shipping via CI/CD pipelines. Recently completed an internship at KodNest Technology, Bangalore building production-grade backend services.
+Currently focused on AI-powered backends — RAG pipelines, vector search, and Azure AI Services. Pursuing the Azure AI Engineer (AI-102) certification & Azure AI Backend Engineer (AI-200).</p>
+
+  <!-- Know Me — yellow border-draw button -->
+  <button (click)="navigateTo('/about')"
+          class="mt-4 group animate-scale-wave delay-6 relative border border-gray-400 shadow inline-flex items-center px-3 py-1.5 bg-white text-black font-medium transition-all duration-200 ease-out hover:bg-transparent hover:shadow-2xl hover:border-none focus:outline-none text-sm">
+    <span aria-hidden="true" class="absolute bg-yellow-400 duration-500 ease-out group-hover:h-full h-0 right-0 top-0 transition-all w-0.5"></span>
+    <span aria-hidden="true" class="absolute bg-yellow-400 bottom-0 duration-500 ease-out group-hover:h-full h-0 left-0 transition-all w-0.5"></span>
+    Know Me
+    <span aria-hidden="true" class="absolute bg-yellow-400 bottom-0 duration-500 ease-out group-hover:w-full h-0.5 left-0 transition-all w-0"></span>
+    <span aria-hidden="true" class="absolute bg-yellow-400 duration-500 ease-out group-hover:w-full h-0.5 right-0 top-0 transition-all w-0"></span>
+  </button>
+
+  <!-- Download CV — same yellow border-draw -->
+  <a href="assets/Sukesh_Resume.pdf" download
+     class="mt-4 ml-3 group animate-scale-wave delay-6 relative border border-gray-400 shadow inline-flex items-center px-3 py-1.5 bg-white text-black font-medium transition-all duration-200 ease-out hover:bg-transparent hover:shadow-xl hover:border-none focus:outline-none text-sm">
+    <span aria-hidden="true" class="absolute bg-yellow-400 duration-500 ease-out group-hover:h-full h-0 right-0 top-0 transition-all w-0.5"></span>
+    <span aria-hidden="true" class="absolute bg-yellow-400 bottom-0 duration-500 ease-out group-hover:h-full h-0 left-0 transition-all w-0.5"></span>
+    Download CV
+    <span aria-hidden="true" class="absolute bg-yellow-400 bottom-0 duration-500 ease-out group-hover:w-full h-0.5 left-0 transition-all w-0"></span>
+    <span aria-hidden="true" class="absolute bg-yellow-400 duration-500 ease-out group-hover:w-full h-0.5 right-0 top-0 transition-all w-0"></span>
+  </a>
+</div>
+
+<hr class="my-4 animate-scale-wave delay-7 border-gray-200">
+
+
+
+<hr class="border-gray-200 animate-scale-wave delay-8">
+
+<div class="px-4 py-4 animate-scale-wave delay-8">
+  <app-social-icons></app-social-icons>
+</div>
+
+<div class="px-4 pb-4 flex items-center gap-1" style="color: #aaa;">
+  <span style="font-size: 10px;">&#169;</span>
+  <span style="font-size: 10px; font-family: 'Space Mono', monospace; letter-spacing: 0.06em;">SUKESH BIRADAR</span>
+</div>

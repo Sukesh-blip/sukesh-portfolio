@@ -1,0 +1,79 @@
+<!-- Fixed Navbar -->
+<nav class="text-black p-2 bg-sky-50 fixed w-full shadow-md top-0 z-40 hover:bg-sky-100 transition-colors duration-200">
+  <div class="container mx-auto flex items-center justify-between">
+    <div>
+      <a routerLink="/about"
+         class="text-lg tracking-[0.2em] font-semibold hover:text-sky-500 uppercase wave-in delay-1 transition-colors duration-200">
+        SUKESH BIRADAR
+      </a>
+    </div>
+
+    <!-- Desktop links -->
+    <div class="hidden 900px:flex space-x-4">
+      <a routerLink="/about" routerLinkActive="text-blue-700 font-semibold"
+         class="relative text-black tracking-[0.25em] hover:text-blue-700 uppercase text-xs wave-in delay-2
+                before:bg-violet-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full
+                before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out
+                hover:before:origin-bottom-left hover:before:scale-x-100">About</a>
+      <a routerLink="/experience" routerLinkActive="text-blue-700 font-semibold"
+         class="relative text-black tracking-[0.25em] hover:text-blue-700 uppercase text-xs wave-in delay-3
+                before:bg-violet-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full
+                before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out
+                hover:before:origin-bottom-left hover:before:scale-x-100">Experience</a>
+      <a routerLink="/projects" routerLinkActive="text-blue-700 font-semibold"
+         class="relative text-black tracking-[0.25em] hover:text-blue-700 uppercase text-xs wave-in delay-4
+                before:bg-violet-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full
+                before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out
+                hover:before:origin-bottom-left hover:before:scale-x-100">Projects</a>
+      <a routerLink="/contact" routerLinkActive="text-blue-700 font-semibold"
+         class="relative text-black tracking-[0.25em] hover:text-blue-700 uppercase text-xs wave-in delay-5
+                before:bg-violet-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full
+                before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out
+                hover:before:origin-bottom-left hover:before:scale-x-100">Contact</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <div class="900px:hidden flex items-center">
+      <img src="assets/profile.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-4 object-cover">
+      <button (click)="toggleMenu()" class="text-black focus:outline-none">
+        <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg *ngIf="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div *ngIf="menuOpen" class="fixed inset-0 bg-black bg-opacity-10 z-40" (click)="toggleMenu()"></div>
+  <div *ngIf="menuOpen"
+       class="fixed top-14 right-3 mt-2 w-40 p-2 space-y-2 bg-white shadow-2xl shadow-gray-400 z-50 animate-fade-in">
+    <a routerLink="/about"    routerLinkActive="text-blue-600 font-semibold" (click)="toggleMenu()" class="block tracking-[0.1em] text-gray-500 uppercase text-xs px-2 py-1 hover:text-blue-600">About</a>
+    <a routerLink="/experience" routerLinkActive="text-blue-600 font-semibold" (click)="toggleMenu()" class="block tracking-[0.1em] text-gray-500 uppercase text-xs px-2 py-1 hover:text-blue-600">Experience</a>
+    <a routerLink="/projects"  routerLinkActive="text-blue-600 font-semibold" (click)="toggleMenu()" class="block tracking-[0.1em] text-gray-500 uppercase text-xs px-2 py-1 hover:text-blue-600">Projects</a>
+    <a routerLink="/contact"  routerLinkActive="text-blue-600 font-semibold" (click)="toggleMenu()" class="block tracking-[0.1em] text-gray-500 uppercase text-xs px-2 py-1 hover:text-blue-600">Contact</a>
+  </div>
+</nav>
+
+<!-- Main Layout -->
+<div class="mt-12 flex flex-col 900px:flex-row min-h-screen bg-gray-100">
+
+  <!-- Desktop Sidebar (fixed, dark) -->
+  <div class="hidden 900px:block w-80 fixed top-12 bottom-0 overflow-y-auto sidebar-scroll"
+       style="background-color: #ffffff; border-right: 1px solid #e5e7eb;">
+    <app-profile-details></app-profile-details>
+  </div>
+
+  <!-- Content Area -->
+  <div class="flex-1 overflow-y-auto 900px:ml-80">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Mobile Sidebar (bottom) -->
+  <div class="block 900px:hidden mt-6 m-4" style="background-color: #ffffff; border-right: 1px solid #e5e7eb;">
+    <app-profile-details></app-profile-details>
+  </div>
+
+</div>
